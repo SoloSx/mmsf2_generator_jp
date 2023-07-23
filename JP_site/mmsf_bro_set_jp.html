@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+    <title> MMSF2 流星のロックマン2 チートコードジェネレーター</title>
+    <meta name="author" content="SoloSx">
+    <link rel="stylesheet" type="text/css" href="CSS/body.css">
+</head>
+    
+    <body>
+
+    <h2>ブラザー設定</h2>
+        <table border="1">
+            <tr>
+                <td>
+                    <b>左上:</b><br>
+                    ver:
+                    <select class="ver-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 1枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 2枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 3枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 4枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                </td>
+    
+                <td><b>右上:</b><br>
+                    ver:
+                    <select class="ver-selection"></select>
+                    <!-- JavaScript array combo box--><br>                    
+                    FAV 1枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 2枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 3枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 4枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                </td>
+            </tr>
+    
+            <tr>
+                <td><b>左中:</b><br>
+                    ver:
+                    <select class="ver-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 1枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 2枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 3枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 4枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                </td>
+                <td><b>右中:</b><br>
+                    ver:
+                    <select class="ver-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 1枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 2枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 3枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 4枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><b>左下:</b><br>
+                    ver:
+                    <select class="ver-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 1枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 2枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 3枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 4枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                </td>
+                <td><b>右下:</b><br>
+                    ver:
+                    <select class="ver-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 1枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 2枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 3枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                    FAV 4枚目:
+                    <select class="card-selection"></select>
+                    <!-- JavaScript array combo box--><br>
+                </td>
+        </table>
+        <script src="select_cards_jp.js"></script> 
+        <script src="select_ver_jp.js"></script> 
+        <button id="gen_val">コード出力</button>
+        <button id="reset">リセット</button><br>
+        <input type="text" id="myTextField" readonly>
+
+
+
+
+        <script>
+            // ボタンにイベントリスナを追加
+            document.getElementById("gen_val").addEventListener("click", function(){
+            // ボタンがクリックされた時、テキストフィールドに特定の値を出力
+            document.getElementById("myTextField").value = "選択した値";
+            
+            });
+
+            // リセットボタンにイベントリスナを追加
+            document.getElementById("reset").addEventListener("click", function(){
+            // リセットボタンがクリックされた時、テキストフィールドの中身を消す
+            document.getElementById("myTextField").value = "";
+            });
+        </script>
+    </body>
+    
+    
+    </html>
+    
+    

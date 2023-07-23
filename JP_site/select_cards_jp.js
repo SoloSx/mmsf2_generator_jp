@@ -395,9 +395,11 @@ var card_data = {
     "033F": "シラハドリ★3",
     "0342": "ギガマイン★3"
 }
-// Wait for the document to load
-document.addEventListener('DOMContentLoaded', function() {
-    var select = document.getElementById('card-selection');
+
+// choose combo item
+var selects = document.querySelectorAll('.card-selection');
+for (var i = 0; i < selects.length; i++) {
+    var select = selects[i];
     for (var key in card_data) {
         if (card_data.hasOwnProperty(key)) {
             var option = document.createElement('option');
@@ -406,4 +408,4 @@ document.addEventListener('DOMContentLoaded', function() {
             select.appendChild(option);
         }
     }
-});
+}
