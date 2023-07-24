@@ -303,6 +303,33 @@
                 outputField.value = outputStrings.join('\n');
             });
             
+            // Add an event listener to the reset button
+            document.getElementById("reset").addEventListener("click", function(){
+                // Clear all selects
+                for (var i = 0; i < verSelects.length; i++) {
+                    verSelects[i].selectedIndex = 0;
+                }
+                for (var i = 0; i < cardSelects.length; i++) {
+                    cardSelects[i].selectedIndex = 0;
+                }
+            
+                // Clear the selected keys
+                for (var key in selectedVerKeys) {
+                    if (selectedVerKeys.hasOwnProperty(key)) {
+                        selectedVerKeys[key] = "00000001";
+                    }
+                }
+                for (var key in selectedCardKeys) {
+                    if (selectedCardKeys.hasOwnProperty(key)) {
+                        selectedCardKeys[key] = "0000";
+                    }
+                }
+            
+                // Clear the output field
+                outputField.value = "";
+            });
+
+                        
             </script>
     </body>
     </html>
