@@ -1,4 +1,5 @@
-.right-align {
-    display: flex;
-    justify-content: flex-end;
+outputTextField.style {
+    width: 254px;
+    height: 281px;
 }
+
