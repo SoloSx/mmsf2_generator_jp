@@ -303,6 +303,9 @@
                 outputField.value = outputStrings.join('\n');
             });
             
+
+
+
             // Add an event listener to the reset button
             document.getElementById("reset").addEventListener("click", function(){
                 // Clear all selects
@@ -312,7 +315,7 @@
                 for (var i = 0; i < cardSelects.length; i++) {
                     cardSelects[i].selectedIndex = 0;
                 }
-            
+
                 // Clear the selected keys
                 for (var key in selectedVerKeys) {
                     if (selectedVerKeys.hasOwnProperty(key)) {
@@ -324,12 +327,12 @@
                         selectedCardKeys[key] = "0000";
                     }
                 }
-            
+
                 // Clear the output field
                 outputField.value = "";
             });
 
-                        
+                            
             </script>
     </body>
     </html>
