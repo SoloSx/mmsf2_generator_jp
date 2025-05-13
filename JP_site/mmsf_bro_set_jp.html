@@ -130,7 +130,8 @@
         <script src="select_cards_jp.js"></script>
         <script src="select_ver_jp.js"></script>
         <button id="gen_val">コード出力</button>
-        <button id="reset">リセット</button><br />
+        <button id="reset">リセット</button>
+        <button id="copy_top_left">左上の設定をすべてにコピー</button><br />
         <textarea cols="30" rows="16" id="outputTextField"></textarea>
 
         <script>
@@ -328,6 +329,96 @@
 
                 // Clear the output field
                 outputField.value = "";
+            });
+
+            // Add an event listener to the copy top left button
+            document.getElementById("copy_top_left").addEventListener("click", function () {
+                // Get the top left ver value
+                var topLeftVer = selectedVerKeys["top_left_ver"];
+
+                // Get the top left FAV values
+                var topLeftFav01 = selectedCardKeys["top_left_fav_01"];
+                var topLeftFav02 = selectedCardKeys["top_left_fav_02"];
+                var topLeftFav03 = selectedCardKeys["top_left_fav_03"];
+                var topLeftFav04 = selectedCardKeys["top_left_fav_04"];
+
+                // Copy ver value to all other positions
+                selectedVerKeys["top_right_ver"] = topLeftVer;
+                selectedVerKeys["mid_left_ver"] = topLeftVer;
+                selectedVerKeys["mid_right_ver"] = topLeftVer;
+                selectedVerKeys["btm_left_ver"] = topLeftVer;
+                selectedVerKeys["btm_right_ver"] = topLeftVer;
+
+                // Copy FAV values to all other positions
+                // Top right
+                selectedCardKeys["top_right_fav_01"] = topLeftFav01;
+                selectedCardKeys["top_right_fav_02"] = topLeftFav02;
+                selectedCardKeys["top_right_fav_03"] = topLeftFav03;
+                selectedCardKeys["top_right_fav_04"] = topLeftFav04;
+
+                // Mid left
+                selectedCardKeys["mid_left_fav_01"] = topLeftFav01;
+                selectedCardKeys["mid_left_fav_02"] = topLeftFav02;
+                selectedCardKeys["mid_left_fav_03"] = topLeftFav03;
+                selectedCardKeys["mid_left_fav_04"] = topLeftFav04;
+
+                // Mid right
+                selectedCardKeys["mid_right_fav_01"] = topLeftFav01;
+                selectedCardKeys["mid_right_fav_02"] = topLeftFav02;
+                selectedCardKeys["mid_right_fav_03"] = topLeftFav03;
+                selectedCardKeys["mid_right_fav_04"] = topLeftFav04;
+
+                // Bottom left
+                selectedCardKeys["btm_left_fav_01"] = topLeftFav01;
+                selectedCardKeys["btm_left_fav_02"] = topLeftFav02;
+                selectedCardKeys["btm_left_fav_03"] = topLeftFav03;
+                selectedCardKeys["btm_left_fav_04"] = topLeftFav04;
+
+                // Bottom right
+                selectedCardKeys["btm_right_fav_01"] = topLeftFav01;
+                selectedCardKeys["btm_right_fav_02"] = topLeftFav02;
+                selectedCardKeys["btm_right_fav_03"] = topLeftFav03;
+                selectedCardKeys["btm_right_fav_04"] = topLeftFav04;
+
+                // Update the select elements to reflect the new values
+                // Ver selects
+                for (var i = 0; i < verSelects.length; i++) {
+                    var select = verSelects[i];
+                    var id = select.id;
+                    if (id !== "top_left_ver") {
+                        // Find the option with the value matching topLeftVer
+                        for (var j = 0; j < select.options.length; j++) {
+                            if (select.options[j].value === topLeftVer) {
+                                select.selectedIndex = j;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // Card selects
+                for (var i = 0; i < cardSelects.length; i++) {
+                    var select = cardSelects[i];
+                    var id = select.id;
+                    if (!id.startsWith("top_left_")) {
+                        // Extract the position (top_right, mid_left, etc.) and the fav number (fav_01, fav_02, etc.)
+                        var parts = id.split("_");
+                        var position = parts[0] + "_" + parts[1]; // e.g., "top_right", "mid_left"
+                        var favNumber = parts[2] + "_" + parts[3]; // e.g., "fav_01", "fav_02"
+                       
+                        // Get the corresponding top left value
+                        var topLeftId = "top_left_" + favNumber;
+                        var topLeftValue = selectedCardKeys[topLeftId];
+
+                        // Find the option with the value matching the top left value
+                        for (var j = 0; j < select.options.length; j++) {
+                            if (select.options[j].value === topLeftValue) {
+                                select.selectedIndex = j;
+                                break;
+                            }
+                        }
+                    }
+                }
             });
         </script>
     </body>
