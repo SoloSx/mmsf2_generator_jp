@@ -1,7 +1,6 @@
 // giga mega合わせて2枚FAV設定可能
 // スターカードはFAV指定可能
 
-
 var card_data = {
     //normal
     "0001": "キャノン",
@@ -393,16 +392,16 @@ var card_data = {
     "033C": "ボムライザー★3",
     "033E": "セイレイノイカリ★3",
     "033F": "シラハドリ★3",
-    "0342": "ギガマイン★3"
-}
+    "0342": "ギガマイン★3",
+};
 
 // choose combo item
-var selects = document.querySelectorAll('.card-selection');
+var selects = document.querySelectorAll(".card-selection");
 for (var i = 0; i < selects.length; i++) {
     var select = selects[i];
     for (var key in card_data) {
         if (card_data.hasOwnProperty(key)) {
-            var option = document.createElement('option');
+            var option = document.createElement("option");
             option.value = key;
             option.text = card_data[key];
             select.appendChild(option);

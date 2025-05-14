@@ -1,0 +1,25 @@
+{
+    "name": "mmsf2_generator_jp",
+    "version": "1.0.0",
+    "description": "https://solosx.github.io/mmsf2_generator_jp/",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write \"**/*.{html,css,js,json}\"",
+        "check-format": "prettier --check \"**/*.{html,css,js,json}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/solosx/mmsf2_generator_jp.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/solosx/mmsf2_generator_jp/issues"
+    },
+    "homepage": "https://github.com/solosx/mmsf2_generator_jp#readme",
+    "devDependencies": {
+        "prettier": "^3.5.3"
+    }
+}
